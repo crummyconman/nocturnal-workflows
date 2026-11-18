@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Reminders + Quote Follow-Up (free) | Nocturnal Workflows</title>
+<meta name="description" content="A free Google Sheets script that emails polite payment reminders from your own Gmail when an invoice is 3, 7 and 14 days overdue, and stops when you mark it Paid. A free Google Sheets script that follows up on quotes you've sent on day 2, 7 and 14, from your own Gmail, and stops when it finds the customer's reply in the thread or you mark the quote Won or Lost.">
+<style>
+:root{--navy:#0d1b2e;--panel:#13263f;--teal:#2ad19b;--text:#e8eef6;--muted:#aab9cd}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
+.wrap{max-width:820px;margin:0 auto;padding:32px 20px 64px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:40px}header img{width:44px;height:44px;border-radius:10px}header b{font-size:18px}
+h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 12px}h2{font-size:24px;margin:48px 0 12px}
+p.lead{color:var(--muted);font-size:18px;margin:0 0 28px}
+.card{background:var(--panel);border-radius:14px;padding:24px;margin-top:16px}
+.btn{display:inline-block;background:var(--teal);color:var(--navy);font-weight:700;padding:14px 22px;border-radius:10px;border:0;font-size:16px;text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 16px}
+.small{font-size:14px;color:var(--muted)}ol li,ul li{margin:6px 0}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid #22385a;font-size:14px;color:var(--muted)}
+a{color:var(--teal)}
+</style>
+</head>
+<body><div class="wrap">
+<header><img src="logo.png" alt="Nocturnal Workflows logo"><b>Nocturnal Workflows</b></header>
+<p class="small" style="margin:-20px 0 36px"><a href="index.html" style="color:var(--teal)">Instant Lead Response — free download</a></p>
+
+<h1>Stop chasing invoices by hand.</h1>
+<p class="lead">A free script for your Google Sheet. It emails a polite reminder when an invoice is 3, 7 and 14 days overdue, sent from your own Gmail. Mark the invoice Paid and the reminders stop.</p>
+
+<div class="card">
+<p><a class="btn" href="invoice-quote-reminders.zip" download>Download free (zip)</a></p>
+<p class="small">Direct download, no email required.</p>
+</div>
+
+<p>In QuickBooks' 2026 Small Business Late Payments Report, 59% of small businesses said at least some of their invoices were overdue by 30 days or more, up from 47% the year before. (<a href="https://quickbooks.intuit.com/r/small-business-data/small-business-late-payments-report-2026/">QuickBooks 2026 Small Business Late Payments Report</a>)</p>
+
+<h2>Who it's for</h2>
+<p>Freelancers and tradespeople who send invoices from a spreadsheet, Word or Gmail. If you already use QuickBooks, FreshBooks or Stripe invoicing, those tools have their own reminders, so you probably don't need this.</p>
+
+<h2>What it does</h2>
+<ol>
+<li>You list your invoices in the Invoices tab: customer, email, amount, due date and status.</li>
+<li>Once a day, the script checks for invoices that are past due and not marked Paid.</li>
+<li>At 3, 7 and 14 days overdue, it sends that customer a short, polite reminder from your Gmail, using the wording you set in the sheet.</li>
+<li>Mark the row Paid and nothing more goes out.</li>
+<li>If a customer replies STOP, the automatic reminders to them end and you get a note so you can follow up personally.</li>
+</ol>
+
+<h2>What you control</h2>
+<ul>
+<li>The wording of every reminder. The templates are editable cells in the sheet.</li>
+<li>Test mode, which sends every email to you only until you switch it off.</li>
+<li>A daily send cap of 50 emails. That's well under the roughly 100 recipients a day a free Gmail account can send to from a script.</li>
+</ul>
+
+<h2>What it costs to run</h2>
+<p>$0. It runs in your own Google account using Google Sheets, Apps Script and Gmail. There's no subscription, no AI and no texting.</p>
+
+<h2>Setup, about 5 minutes</h2>
+<p>Download the kit and make a copy of the sheet. In Settings, fill in your business name and address. Open the script, turn on the free Gmail API service, and approve the Gmail permission. Add a test invoice using an alias of your own email (like yourname+test@gmail.com), run test mode, then switch it on. The README walks through every step.</p>
+
+<h2>How to tell it worked</h2>
+<p>The test reminder arrives at your +test alias, and the sheet logs the date it was sent next to the row. Test mode only sends to your own addresses, so nothing can reach a real customer.</p>
+
+<p>The reminders are polite and factual, with no threats and no late-fee language unless you add your own terms.</p>
+
+<p>Emails go out from your Gmail under your name, so you're the sender and responsible for what they say.</p>
+
+<h2>Follow up on every quote without having to remember to.</h2>
+<p class="lead">A free script for your Google Sheet. It checks in on quotes you've sent on day 2, 7 and 14, from your own Gmail. It stops when the daily check finds a reply in the thread, or when you mark the quote Won or Lost.</p>
+
+<div class="card">
+<p><a class="btn" href="invoice-quote-reminders.zip" download>Download free (zip)</a></p>
+<p class="small">Direct download, no email required.</p>
+</div>
+
+<h2>Who it's for</h2>
+<p>Tradespeople and freelancers who send quotes by email and lose track of which ones never got an answer.</p>
+
+<h2>What it does</h2>
+<ol>
+<li>You list the quotes you've sent in the Quotes tab: customer, email, job, date sent and status.</li>
+<li>Once a day, the script checks for open quotes.</li>
+<li>On day 2, 7 and 14 it sends a short check-in from your Gmail, in the same email thread where possible.</li>
+<li>It stops when you mark the quote Won or Lost, or when the daily check finds a reply in the thread. It can miss a reply sent from a different address or as a brand-new email, so mark those quotes yourself.</li>
+</ol>
+
+<p><b>What you control:</b> Your wording, test mode, and the daily cap, same as the invoice kit.</p>
+
+<p><b>What it costs to run:</b> $0. It uses only your own Google account.</p>
+
+<p><b>Setup:</b> It's the same 5 minutes as the invoice kit. Your business address is required, and the script won't send a quote follow-up until it's filled in.</p>
+
+<p><b>How to tell it worked:</b> Use an alias of your own email (like yourname+test@gmail.com) as the test customer. The check-in arrives at that alias. Reply from it, and the next run marks the quote "Replied" and stops following up. Test mode only sends to your own addresses.</p>
+
+<p>The follow-ups ask whether the customer has questions or wants to go ahead. They don't use discounts, deadlines or pushy language. Every follow-up includes an easy way to say no thanks and your business address. The script won't send a follow-up until the address is filled in.</p>
+
+<p>Emails go out from your Gmail under your name, so you're the sender and responsible for what they say.</p>
+
+<h2 id="install">Rather have it set up for you?</h2>
+<div class="card">
+<p>We'll do the install for you. We set the script up in your own Google account, add your wording, run a test that only emails you, and turn it on with you.</p>
+<div class="btn-row">
+<a class="btn" href="mailto:hello@nocturnalworkflows.com?subject=Install%20request">Ask about an install</a>
+<span class="or" style="align-self:center;opacity:.8">or</span>
+<a class="btn ghost" href="https://calendly.com/conor-cammann/30min" target="_blank" rel="noopener">Book a call</a>
+</div>
+<p class="small">This opens an email to hello@nocturnalworkflows.com with the subject "Install request." Tell us your name and which kit you want set up, and we'll reply with next steps and a price before anything starts.</p>
+<p class="small">Asking doesn't commit you to anything. We don't promise faster payments or more jobs won. After install, the emails still go out from your Gmail under your name, so you remain the sender.</p>
+</div>
+
+<footer>Nocturnal Workflows builds practical AI tools that work in the background for small businesses. <a href="https://www.youtube.com/@NocturnalWorkflows" style="color:var(--teal)" target="_blank" rel="noopener">YouTube</a></footer>
+</div></body></html>
