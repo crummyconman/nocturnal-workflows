@@ -10,6 +10,8 @@
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
 .wrap{max-width:820px;margin:0 auto;padding:32px 20px 64px}
 header{display:flex;align-items:center;gap:12px;margin-bottom:40px}header img{width:44px;height:44px;border-radius:10px}header b{font-size:18px}
+header .brand{display:flex;align-items:center;gap:12px;color:var(--text);text-decoration:none}
+header nav{margin-left:auto}header nav a{color:var(--teal);text-decoration:none}
 h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 12px}h2{font-size:24px;margin:48px 0 12px}
 p.lead{color:var(--muted);font-size:18px;margin:0 0 28px}
 .card{background:var(--panel);border-radius:14px;padding:24px;margin-top:16px}
@@ -22,8 +24,10 @@ a{color:var(--teal)}
 </style>
 </head>
 <body><div class="wrap">
-<header><img src="logo.png" alt="Nocturnal Workflows logo"><b>Nocturnal Workflows</b></header>
-<p class="small" style="margin:-20px 0 36px"><a href="index.html" style="color:var(--teal)">Instant Lead Response — free download</a></p>
+<header>
+<a class="brand" href="index.html"><img src="logo.png" alt="Nocturnal Workflows logo"><b>Nocturnal Workflows</b></a>
+<nav class="small"><a href="index.html#tools">Free tools</a></nav>
+</header>
 
 <h1>Stop chasing invoices by hand.</h1>
 <p class="lead">A free script for your Google Sheet. It emails a polite reminder when an invoice is 3, 7 and 14 days overdue, sent from your own Gmail. Mark the invoice Paid and the reminders stop.</p>
